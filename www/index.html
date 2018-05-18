@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--Cordova
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="js/library/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/library/fastclick.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <title>Sleep Well</title>
+    </head>
+    <body>
+        <div class="appContainer">
+
+            <!-- phone staus bar w/battery, etc. -->
+            <div class="statusBar"></div>
+                
+            <!-- header w/nav & help icons-->
+            <div class="header">
+                <!-- navigation/search/favs menu icon -->
+                <img class="iconNav" src="img/iconNav.png">
+                <img class="iconSearch" src="img/iconSearch.png">
+                <img class="iconFav" src="img/iconFav.png">
+            </div>
+
+<!-- __________________________________________________________________ -->
+
+            <!-- SCREEN: HOME  -->
+            <div id="homeScreen" class="page">
+                <img class="appLogo" src="img/appLogo.png">
+                <img class="appTitle" src="img/appTitle.png">
+                <h2>Currently:</h2>
+                <p id="time">
+                    <span class="currentTime"></span>
+                    <span class="currentTimeSuffix"></span>
+                </p>
+            </div>
+<!-- __________________________________________________________________ -->
+
+            <!-- SCREEN: FAV SOUNDS -->
+            <div id="favSounds" class="page">
+                <div class="timeRing"></div>
+                <h2>Currently:</h2>
+                <div id="time">
+                    <span class="currentTime"></span>
+                    <span class="currentTimeSuffix"></span>
+                </div>
+                <h4>Your favourite sounds</h4>
+                
+                <!-- <audio src="sounds/crickets.mp3"></audio> -->
+                <!-- <audio src="sounds/forest.mp3" loop></audio> -->
+                <div class="sounds">
+                    <audio id="sndBird" src="sound/bird.mp3" loop></audio>
+                    <audio id="sndLeaf" src="sound/leaf.mp3" loop></audio>
+                    <audio id="sndTrees" src="sound/trees.mp3" loop></audio>
+                    <audio id="sndRain" src="sound/rain.mp3" loop></audio>
+                    <audio id="sndOcean" src="sound/ocean.mp3" loop></audio>
+                    <audio id="sndWind" src="sound/wind.mp3" loop></audio>
+                    <audio id="sndFire" src="sound/fire.mp3" loop></audio>
+                    <audio id="sndMelody" src="sound/melody.mp3" loop></audio>
+                    <audio id="sndPiano" src="sound/piano.mp3" loop></audio>
+
+                    <section id="gridFavSounds">
+                        <img class="iconBird" src="img/iconBird.png" alt="Bird">
+                        <img class="iconLeaf" src="img/iconLeaf.png" alt="Autumn Leaf">
+                        <img class="iconTrees" src="img/iconTrees.png" alt="Trees">
+                        <img class="iconRain" src="img/iconRain.png" alt="Rain">
+                        <img class="iconOcean" src="img/iconOcean.png" alt="Ocean">
+                        <img class="iconWind" src="img/iconWind.png" alt="Wind">
+                        <img class="iconFire" src="img/iconFire.png" alt="Fire">
+                        <img class="iconMelody" src="img/iconMelody.png" alt="Melody">
+                        <img class="iconPiano" src="img/iconPiano.png" alt="Piano">
+                    </section>
+                </div>
+
+                <section class="btnGoToSleep">
+                    <img src="img/btnGoToSleep.png" alt="Go to sleep">
+                </section>
+            </div>
+
+<!-- _____________ -->
+
+            <!-- SCREEN: NAV SIDE MENU (OVERLAY) -->
+            <div id="navMenu">
+                <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+                <section href="javascript:void(0)" class="navOverlay">
+                    <a href="#" class="linkPresent1" id="linkFav">Sound Board<img class="iconNavRev" src="img/iconNavRev.png"></a>
+                    <a href="#" class="linkPresent2" id="linkDTrend">Today's Trend</a>
+                    <a href="#" class="linkPresent2" id="linkMTrends">Monthly Trend</a>
+                    <a href="#" class="linkPast" id="may18">May</a>
+                    <a href="#" class="linkPast" id="apr18">April</a>
+                    <a href="#" class="linkPast" id="mar18">March</a>
+                    <a href="#" class="linkPast" id="feb18">February</a>
+                    <a href="#" class="linkPast" id="jan18">January</a>
+                    <a href="#" class="linkPast" id="dec17">December'17</a>
+                    <a href="#" class="linkPast" id="nov17">November'17</a>
+                    <a href="#" class="linkPast" id="oct17">October'17</a>
+                    <a href="#" class="linkPast" id="sep17">September'17</a>
+                    <a href="#" class="linkPast" id="aug17">August'17</a>
+                    <a href="#" class="linkPast" id="jul17">July'17</a>
+                    <a href="#" class="linkPast" id="jun17">June'17</a>
+                </section>
+            </div>
+
+<!-- __________________________________________________________________ -->
+
+            <!-- SCREEN: SEARCH SOUNDS -->
+            <div id="searchSounds" class="page">
+                <h1>Discover new<br/>sounds</h1>
+                <section class="gridSearchSounds">
+                    <h4 class="gridSS-H1">Nature Samples</h4>
+                        <div class="blank"></div>
+                        <div class="iconSample1"></div>
+                        <div class="iconSample2"></div>
+                        <div class="iconSample3"></div>
+                        <div class="iconSample4"></div>
+                        <div class="arrow"></div>
+                    <h4 class="gridSS-H2">Instrument Samples</h4>
+                        <div class="blank"></div>
+                        <div class="iconSample1"></div>
+                        <div class="iconSample2"></div>
+                        <div class="iconSample3"></div>
+                        <div class="iconSample4"></div>
+                        <div class="arrow"></div>
+                    <h4 class="gridSS-H3">Animal Samples</h4>
+                        <div class="blank"></div>
+                        <div class="iconSample1"></div>
+                        <div class="iconSample2"></div>
+                        <div class="iconSample3"></div>
+                        <div class="iconSample4"></div>
+                        <div class="arrow"></div>
+                    <h4 class="gridSS-H3">Melody Samples</h4>
+                        <div class="blank"></div>
+                        <div class="iconSample1"></div>
+                        <div class="iconSample2"></div>
+                        <div class="iconSample3"></div>
+                        <div class="iconSample4"></div>
+                        <div class="arrow"></div>
+                </section>
+            </div>
+
+<!-- __________________________________________________________________ -->
+
+            <!-- SCREEN: SLEEP TRENDS -->
+            <div id="sleepTrends" class="page">
+                <h1 class="title">Sleep Trend</h1>
+                <h2 class="subTitle">15th May 2018</h2>
+                <p class="subText">Hours of sleep: 10</p>
+                <section class="imgREM">
+                    <img class="btnREM" src="img/btnREM.png" alt="REM Cycles Button">
+                    <img class="graphTrend" src="img/graphTrends.png" alt="Sleep Trends Graph">
+                </section>
+            </div>
+            
+<!-- __________________________________________________________________ -->
+
+            <!-- SCREEN: REM CYCLE -->
+            <div id="remCycle" class="page">
+                <h1 class="title">REM Cycles</h1>
+                <h2 class="subTitle">15th May 2018</h2>
+                <p class="subText">Cycles completed: 5</p>
+                <section class="imgTrend">
+                    <img class="btnTrend" src="img/btnTrend.png" alt="Sleep Trend Button">
+                    <img class="graphREM" src="img/graphREM.png" alt="REM Cycles Graph">
+                </section>
+            </div>
+
+<!-- __________________________________________________________________ -->
+
+            <!-- SCREEN: MONTHLY TRENDS (MAY) -->
+            <div id="mayTrends" class="page">
+                <h1 class="title">MAY</h1>
+                <h2 class="subTitle">Sleep Trends</h2>
+                <p class="subText">Average sleep time: 6hrs 52mins</p>
+                <section class="imgTrend">
+                    <img class="btnTrend" src="img/btnTrend.png" alt="Sleep Trend Button">
+                    <img class="graphMonthMay" src="img/graphMonthMay.png" alt="Monthly Trends for May">
+                </section>
+            </div>
+
+<!-- __________________________________________________________________ -->
+
+        </div>
+<!-- __________________________________________________________________ -->
+
+    </body>
+</html>
