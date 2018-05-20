@@ -168,9 +168,10 @@ body {
 }
 
 
-
 /***HOME SCREEN-----------------------------------------------
 ------------------------------------------------------------*/
+
+/*#homeScreen * {box-sizing: border-box; border: 1px solid red;}*/
 
 .appLogo {
     width: 45%;
@@ -211,8 +212,74 @@ body {
 /*text-shadow: 0px 0px 200px rgba(0,0,0,.5);*/
 
 
+/***FAVSOUNDS SCREEN------------------------------------------
+------------------------------------------------------------*/
+
+/*#favSounds * {box-sizing: border-box; border: 1px solid red;}*/
+
+.timeRing {
+    width: 31.25vh;
+    height: 31.25vh;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0.46875vh solid #FAF8D0;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.85vh; left: 0; right: 0;
+    margin: auto;
+}
+
+#favSounds > #time {
+    margin-top: 1.9% !important; 
+}
+
+#favSounds h2 {
+    margin: 0;
+    padding-top: 4.6875vh;
+    font-size: 3.59375vh;
+    font-family: Microsoft Yi Baiti;
+    font-weight: bold;
+}
+
+#favSounds h4 {
+    margin: 0;
+    padding-top: 13.28125vh;
+}
+
+#gridFavSounds {
+    margin: 6.95% 8.59375vh 0 8.59375vh;
+    padding: 0;
+    display: grid;
+    grid-template-rows: repeat(3, 10.9375vh);
+    grid-template-columns: repeat(3, 10.9375vh);
+    grid-column-gap: 3vh;
+
+    justify-content: center;
+    /*position: relative;*/
+}
+
+#gridFavSounds img {
+    /*border: 1px solid black;*/
+    width: auto;
+    margin: auto;
+    padding: 0;
+    position: relative;
+}
+
+.btnGoToSleep {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    position: relative;
+    top: -8px; left: 0;
+}
+
+
 /***NAV SIDE MENU---------------------------------------------
 ------------------------------------------------------------*/
+
+/*#navMenu * {box-sizing: border-box; border: 1px solid red;}*/
 
 #navMenu {
     display: none;
@@ -320,134 +387,63 @@ body {
 }
 
 
-/***FAVSOUNDS SCREEN------------------------------------------
-------------------------------------------------------------*/
-
-.timeRing {
-    width: 31.25vh;
-    height: 31.25vh;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: 3px solid #FAF8D0;
-    border-radius: 50%;
-    position: absolute;
-    top: -0.85vh; left: 12.5vh;
-}
-
-.dah {
-    /*{"color": "red", "border": "2px solid red"}*/
-    color: red;
-    border: 2px solid red;
-}
-
-#favSounds > #time {
-    margin-top: 1.9% !important; 
-}
-
-#favSounds h2 {
-    margin: 0;
-    padding-top: 4.6875vh;
-    font-size: 3.59375vh;
-    font-family: Microsoft Yi Baiti;
-    font-weight: bold;
-}
-
-#favSounds h4 {
-    margin: 0;
-    padding-top: 13.28125vh;
-}
-
-#gridFavSounds {
-    margin: 6.95% 8.59375vh 0 8.59375vh;
-    padding: 0;
-    /*box-sizing: content-box;*/
-    /*border: 1px solid black;*/
-    display: grid;
-    grid-template-rows: repeat(3, 10.9375vh);
-    grid-template-columns: repeat(3, 10.9375vh);
-    grid-column-gap: 3vh;
-    justify-content: center;
-    /*position: relative;*/
-}
-
-#gridFavSounds img {
-    /*border: 1px solid black;*/
-    width: auto;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-
-.btnGoToSleep {
-    width: 50%;
-    margin: 0;
-    padding: 0;
-    display: inline;
-    position: relative;
-    top: -8px; left: 0;
-}
-
 /***SEARCHSOUNDS SCREEN---------------------------------------
 ------------------------------------------------------------*/
 
+/*#searchSounds * {box-sizing: border-box; border: 1px solid red;}*/
+
 #searchSounds h1 {
-    margin: 0;
+    margin: auto;
     padding-top: 0;
     padding-bottom: 10%;
-    font-size: 30px;
+    font-size: 4.6875vh;
 }
 
 .gridSearchSounds {
     width: 100%;
-    height: 65%;
-    margin: 0 5.625vh;
+    margin: 0;
     padding: 0;
-    display: grid;
-
-    grid-template-columns: 10% repeat(4, 19%) 10%;
-    text-align: left;
+    overflow: hidden;
 }
 
-h4 {
+.gridHeader {
     margin: 0;
-    padding: 2% 0;
+    padding: 2%;
+    text-align: left;
     font-size: 3.125vh;
     font-family: Microsoft Yi Baiti;
-    font-weight: bold;
 }
 
-.gridSearchSounds > div {
-    width: 100%;
+.sampleSection1, .sampleSection2, .sampleSection3, .sampleSection4 {
+    max-width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+} 
+
+.sampleSection1, .sampleSection2, .sampleSection3, .sampleSection4 {
+    margin: -0.5vh 0;
+}
+
+.iconSample1, .iconSample2, .iconSample3, .iconSample4 {
     margin: 0;
     padding: 0;
-    align-self: start;
-    display: inline !important;
-    position: relative;
-    top: 0; left: -10px;
+    height: 10vh;
 }
 
 .soundAdd {
-    margin: 0;
+    margin: 0 -1vh;
     width: 1.6875vh;
     vertical-align: top;
-    align-self: start;
     position: relative;
-    top: 1.25%; left: -2%;
-    padding-bottom: 11%;
+    top: 0.5vh; left: -1.5vh;
 }
 
 .arrow {
+    height: 1.6875vh;
     margin: 0;
-    width: 0.87890625vh;
-    align-self: start;
+    vertical-align: top;
     position: relative;
-    top: 0px; left: 0px;
-}
-
-.gridSS-H1, .gridSS-H2, .gridSS-H3, .gridSS-H4 {
-    margin: 0;
-    grid-column: 2 / 7;
+    top: 3vh; left: 0vh;
 }
 
 li {
@@ -455,9 +451,10 @@ li {
 }
 
 
-
 /***SLEEP TRENDS SCREEN---------------------------------------
 ------------------------------------------------------------*/
+
+/*#sleepTrends * {box-sizing: border-box; border: 1px solid red;}*/
 
 .title {
     margin: 0;
@@ -499,6 +496,8 @@ li {
 /***REM CYCLE SCREEN------------------------------------------
 ------------------------------------------------------------*/
 
+/*#remCycle * {box-sizing: border-box; border: 1px solid red;}*/
+
 .imgTrend > .btnTrend {
     height: 7.8125vh;
     margin: 0;
@@ -516,6 +515,8 @@ li {
 
 /***MONTHLY TRENDS (MAY)--------------------------------------
 ------------------------------------------------------------*/
+
+/*#mayTrends * {box-sizing: border-box; border: 1px solid red;}*/
 
 #mayTrends > .title {
     padding: 28px 0 14px 0 !important;

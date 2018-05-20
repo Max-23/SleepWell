@@ -101,8 +101,8 @@ $(document).ready(function() {
     setInterval('updateTime()', 1000);
 
     // insert placeholder default icons
-    $('.iconSample1,.iconSample2,.iconSample3,.iconSample4').prepend('<img src="img/iconSample.png" width="15%"/><img class="soundAdd" src="img/iconAdd.png"/>');
-    $('.arrow').prepend('<img src="img/iconMore.png" height="10 %"/>');
+    // $('.iconSample1,.iconSample2,.iconSample3,.iconSample4').prepend('<img src="img/iconSample.png" height="10.9375vh"/>');
+    // $('.arrow').prepend('<img src="img/iconMore.png" height="15vh"/>');
 
     function show_homeScreen(){
         $('.page').hide();
@@ -158,6 +158,7 @@ $(document).ready(function() {
     };
 
     show_homeScreen();
+    // show_searchSounds();
 
     // $('.iconNav').click(function(event){
     //  show_navMenu();
