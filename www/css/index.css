@@ -74,9 +74,9 @@ html {
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
     
     width: 100vw;
     height: 100vh;
@@ -232,10 +232,10 @@ body {
     width: 100%;
     height: 100%;
     margin: 0; 
-    padding-left: 4.44%;
+    padding: 0;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 13.44% 11.44% 11.44% repeat(12, 4.3%);  
+    grid-template-rows: 13.44vh 11.44vh 11.44vh repeat(12, 4.3vh);  
     box-sizing: border-box;
     /*border: 1px solid black; */
     /*position: absolute;*/
@@ -252,32 +252,41 @@ body {
 #navMenu a:hover {
     color: #888;
 }
+
+.linkPresent1, .linkPresent2, .linkPast {
+    box-sizing: border-box;
+    border: 1px solid red;
+    /*padding-left: 4.44%;*/
+}
+
 .linkPresent1 {
     margin: auto 0;
     padding: 0;
     position: relative;
-    font-size: 17px;
+    font-size: 2.65625vh;
 }
 
 .linkPresent2 {
+    height: 100%; 
     margin: auto 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 2.5vh;
 }
 
 .linkPast {
+    height: 100%; 
     margin: auto 0;
     padding: 0;
-    padding-left: 12px;
+    padding-left: 5%;
     display: block;
-    font-size: 19px;
+    font-size: 2.961875vh;
     font-family: Microsoft Yi Baiti;
     /*font-weight: bold;*/
 }
 
 .iconNavRev {
-    height: 20px;
-    padding: 0 16px;
+    height: 3.125vh;
+    padding-right: 3.125%;
     cursor: pointer;
     z-index: 1;
     position: absolute;
@@ -392,7 +401,7 @@ body {
 .gridSearchSounds {
     width: 100%;
     height: 65%;
-    margin: 0 10vw;
+    margin: 0 5.625vh;
     padding: 0;
     display: grid;
 
@@ -403,7 +412,7 @@ body {
 h4 {
     margin: 0;
     padding: 2% 0;
-    font-size: 20px;
+    font-size: 3.125vh;
     font-family: Microsoft Yi Baiti;
     font-weight: bold;
 }
@@ -420,7 +429,7 @@ h4 {
 
 .soundAdd {
     margin: 0;
-    width: 3vw;
+    width: 1.6875vh;
     vertical-align: top;
     align-self: start;
     position: relative;
@@ -430,7 +439,7 @@ h4 {
 
 .arrow {
     margin: 0;
-    width: 10px;
+    width: 0.87890625vh;
     align-self: start;
     position: relative;
     top: 0px; left: 0px;
@@ -452,31 +461,31 @@ li {
 
 .title {
     margin: 0;
-    padding: 28px 0;
-    font-size: 29px;
+    padding: 4.375vh 0;
+    font-size: 4.53125vh;
 }
 
 .subTitle {
     margin: 0;
-    padding: 6px 0;
-    font-size: 30px;
+    padding: .9375vh 0;
+    font-size: 4.6875vh;
     font-family: Microsoft Yi Baiti;
     font-weight: bold;
 }
 
 .subText {
     margin: 0;
-    padding: 6px 0;
-    font-size: 20px;
+    padding: .9375vh 0;
+    font-size: 3.125vh;
     font-family: Microsoft Yi Baiti;
     font-weight: bold;
 }
 
 .imgREM > .btnREM {
-    height: 50px;
+    height: 7.8125vh;
     margin: 0;
-    padding-top: 12px;
-    padding-bottom: 33px;
+    padding-top: 1.875vh;
+    padding-bottom: 5.15625vh;
 }
 
 .graphTrend {
@@ -491,10 +500,10 @@ li {
 ------------------------------------------------------------*/
 
 .imgTrend > .btnTrend {
-    height: 50px;
+    height: 7.8125vh;
     margin: 0;
-    padding-top: 12px;
-    padding-bottom: 50px;
+    padding-top: 1.875vh;
+    padding-bottom: 7.8125vh;
 }
 
 .graphREM {
@@ -515,15 +524,15 @@ li {
 
 #mayTrends > .subTitle {
     padding: 0 !important;
-    padding-bottom: 20px !important;
-    font-size: 30px !important;
+    padding-bottom: 3.125vh !important;
+    font-size: 4.6875vh !important;
 }
 
 .imgTrend > .btnTrend {
-    height: 50px;
+    height: 7.8125vh;
     margin: 0;
-    padding-top: 12px;
-    padding-bottom: 50px;
+    padding-top: 1.875vh;
+    padding-bottom: 7.8125vh;
 }
 
 .graphMonthMay {
