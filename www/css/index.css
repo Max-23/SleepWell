@@ -1,61 +1,6 @@
-/*Cordova
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+/*Cordova - Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file to you under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.*/
 
-    .event {
-        border-radius:4px;
-        -webkit-border-radius:4px;
-        color:#FFFFFF;
-        font-size:12px;
-        margin:0px 30px;
-        padding:2px 0px;
-    }
-
-    .event.listening {
-        background-color:#333333;
-        display:block;
-    }
-
-    .event.received {
-        background-color:#4B946A;
-        display:none;
-    }
-
-    @keyframes fade {
-        from { opacity: 1.0; }
-        50% { opacity: 0.4; }
-        to { opacity: 1.0; }
-    }
-     
-    @-webkit-keyframes fade {
-        from { opacity: 1.0; }
-        50% { opacity: 0.4; }
-        to { opacity: 1.0; }
-    }
-     
-    .blink {
-        animation:fade 3000ms infinite;
-        -webkit-animation:fade 3000ms infinite;
-    }
-*/
-
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
+* {-webkit-tap-highlight-color: rgba(0,0,0,0);} /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 
 /*---- Sleep Well app stylesheet ----*/
 
@@ -87,12 +32,9 @@ body {
     background-color: #B3B3B3;
     font-family: "Keep Calm Medium";
     
- 
-    /*display: flex;*/
     justify-content: center;
     align-items: center;
 }
-
 
 
 /***DEFAULT STYLES--------------------------------------------
@@ -100,31 +42,19 @@ body {
     
 .appContainer {
     background: linear-gradient(to bottom, #C5E5D3 0%, #C5E5D3 7%, #58B8D6 100%);
-    width: 56.25vh;
-    /*max-width: ;*/
+    width: 100vw;
     height: 100vh;
-    /*height: calc((16/9)*100vw);*/
     margin: 0;
     padding: 0;
 
-    /*display: flex;*/
     justify-content: center;
     text-align: center;
     position: absolute;
     top: 0;
     overflow: scroll;
-    /*border: 2px solid red;box-sizing: border-box;*/
-
 }
 
-/*.statusBar {*/
-    /*background-color: rgba(0,0,0,0.2);*/
-    /*width: 100%;*/
-    /*height: 24px;*/
-    /*margin: 0;*/
-    /*padding: 0;*/
-    /*z-index: 1;*/
-/*}*/
+/*.statusBar {background-color: rgba(0,0,0,0.2); width: 100%; height: 24px; margin: 0; padding: 0; z-index: 999;}*/
 
 .header {
     width: 100%;
@@ -133,8 +63,6 @@ body {
     padding: 0;
     position: relative;
     /*z-index: 1;*/
-    /*border: 5px solid green;box-sizing: border-box;*/
-
 }
 
 .iconNav {
@@ -143,7 +71,6 @@ body {
     cursor: pointer;
     position: absolute;
     top: 0; left: 0;
-    /*border: 5px solid yellow;box-sizing: border-box;*/
 } 
 
 .iconSearch, .iconFav, .iconHelp {
@@ -152,7 +79,6 @@ body {
     cursor: pointer;
     position: absolute;
     top: 0; right: 0;
-    /*border: 5px solid yellow;box-sizing: border-box;*/
 } 
 
 .page {
@@ -163,15 +89,11 @@ body {
     position: absolute;
     bottom: 0; /*left: 0;*/
     text-align: center;
-    /*border: 5px solid lightgreen;box-sizing: border-box;*/
-
 }
 
 
 /***HOME SCREEN-----------------------------------------------
 ------------------------------------------------------------*/
-
-/*#homeScreen * {box-sizing: border-box; border: 1px solid red;}*/
 
 .appLogo {
     width: 45%;
@@ -209,28 +131,43 @@ body {
     display: inline;
 }
 
-/*text-shadow: 0px 0px 200px rgba(0,0,0,.5);*/
-
 
 /***FAVSOUNDS SCREEN------------------------------------------
 ------------------------------------------------------------*/
 
-/*#favSounds * {box-sizing: border-box; border: 1px solid red;}*/
+@-webkit-keyframes draw {to {stroke-dashoffset: 0;}}
+        @keyframes draw {to {stroke-dashoffset: 0;}}
 
 .timeRing {
-    width: 31.25vh;
-    height: 31.25vh;
+    width: 50vh;
+    height: 50vh;
+    margin: auto;
     padding: 0;
-    box-sizing: border-box;
-    border: 0.46875vh solid #FAF8D0;
-    border-radius: 50%;
     position: absolute;
     top: -0.85vh; left: 0; right: 0;
-    margin: auto;
 }
 
-#favSounds > #time {
-    margin-top: 1.9% !important; 
+.circleContainer {
+    width: 50vh;
+    height: 50vh;
+    margin: auto;
+    padding: 0;
+    overflow: visible;
+
+    -webkit-transform: rotateY(360deg) rotate(-90deg);
+            transform: rotateY(360deg) rotate(-90deg);
+}
+
+circle {
+    margin: 0;
+    padding: 0;
+
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-name: draw;
+            animation-name: draw;
+    -webkit-animation-duration: 1s; 
+            animation-duration: 1s;
 }
 
 #favSounds h2 {
@@ -239,40 +176,52 @@ body {
     font-size: 3.59375vh;
     font-family: Microsoft Yi Baiti;
     font-weight: bold;
+    opacity: 0;
+}
+
+#favSounds > #time {
+    margin-top: 1.9% !important;
 }
 
 #favSounds h4 {
     margin: 0;
     padding-top: 13.28125vh;
+    padding-bottom: 1.5vh;
+    font-size: 2vh;
+    opacity: 0;
 }
 
 #gridFavSounds {
-    margin: 6.95% 8.59375vh 0 8.59375vh;
+    margin: auto;
     padding: 0;
-    display: grid;
-    grid-template-rows: repeat(3, 10.9375vh);
-    grid-template-columns: repeat(3, 10.9375vh);
-    grid-column-gap: 3vh;
-
+    display: inline-grid;
+    grid-template-rows: 12vh 12vh 12vh;
+    grid-template-columns: 12vh 12vh 12vh;
+    grid-column-gap: 1vh;
     justify-content: center;
-    /*position: relative;*/
 }
 
-#gridFavSounds img {
-    /*border: 1px solid black;*/
-    width: auto;
+#gridFavSounds div {
+    display: inline;
+}
+
+#gridFavSounds div * {
+    height: 11.5vh;
     margin: auto;
     padding: 0;
     position: relative;
+    opacity: 0;
+}
+
+#gridFavSounds .iconEmpty {
+    visibility: visible !important;
 }
 
 .btnGoToSleep {
-    width: 50%;
-    margin: 0;
-    padding: 0;
-    display: inline;
-    position: relative;
-    top: -8px; left: 0;
+    height: 11vh;
+    margin: auto;
+    display: block;
+    opacity: 0;
 }
 
 
@@ -289,7 +238,7 @@ body {
     padding: 0;
     position: absolute;
     top: 0; left: 0;
-    z-index: 2;
+    z-index: 3;
     background: linear-gradient(to bottom, #132048 0%, #132048 7%, #647DC2 100%);
     animation: '';
     opacity: 0.9;
@@ -302,10 +251,8 @@ body {
     padding: 0;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 13.44vh 11.44vh 11.44vh repeat(12, 4.3vh);  
+    grid-template-rows: 12vh 7vh 5vh 4.3vh 4.3vh 4.3vh 4.3vh 4.3vh 4.3vh 4.3vh 4.3vh 4.3vh 4.3vh 4.3vh 4.3vh;  
     box-sizing: border-box;
-    /*border: 1px solid black; */
-    /*position: absolute;*/
     text-align: left;
     align-self: center;
     opacity: 1;
@@ -322,60 +269,52 @@ body {
 
 .linkPresent1, .linkPresent2, .linkPast {
     box-sizing: border-box;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     /*padding-left: 4.44%;*/
 }
 
 .linkPresent1 {
-    margin: auto 0;
+    margin: 2vh 1vh 0 3vh;
     padding: 0;
     position: relative;
-    font-size: 2.65625vh;
+    font-size: 3vh;
 }
 
 .linkPresent2 {
     height: 100%; 
-    margin: auto 0;
+    margin: 0 1vh 0 3vh;
     padding: 0;
     font-size: 2.5vh;
 }
 
 .linkPast {
     height: 100%; 
-    margin: auto 0;
+    margin: 0 1vh 0 4.5vh;
     padding: 0;
     padding-left: 5%;
     display: block;
     font-size: 2.961875vh;
     font-family: Microsoft Yi Baiti;
-    /*font-weight: bold;*/
 }
 
 .iconNavRev {
     height: 3.125vh;
+    margin: 0.5vh 0 0 0;
     padding-right: 3.125%;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     top: 0; right: 0;
 }
 
 @keyframes navSlide {
-  0% {
-    left: -80%;
-  }
-  100% {
-    left: 0;
-  }
+    0% {left: -80%;}
+    100% {left: 0;}
 }
 
 @keyframes navSlideBack {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: -80%;
-  }
+    0% {left: 0;}
+    100% {left: -80%;}
 }
 
 .slide {
@@ -407,35 +346,54 @@ body {
 }
 
 .gridHeader {
-    margin: 0;
-    padding: 2%;
+    margin: 0 5vh;
+    padding: 0.5vh;
     text-align: left;
     font-size: 3.125vh;
     font-family: Microsoft Yi Baiti;
 }
 
-.sampleSection1, .sampleSection2, .sampleSection3, .sampleSection4 {
+.gridSearchSounds section[class^='sampleSection'] {
+    margin: -0.5vh 0;
     max-width: 100%;
     display: inline-block;
     white-space: nowrap;
+
 } 
 
-.sampleSection1, .sampleSection2, .sampleSection3, .sampleSection4 {
-    margin: -0.5vh 0;
+.gridSearchSounds div[class^='gridRow'] {
+    margin: 0 5vh;
+    position: relative;
+    width:80vw;
+    display: inline-block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    -webkit-scroll-behavior: smooth;
+            scroll-behavior: smooth;
+    -webkit-scroll-snap-type: mandatory;
+            scroll-snap-type: mandatory;
+    -webkit-scroll-snap-points-x: repeat(20vw);
+            scroll-snap-points-x: repeat(20vw);
+    -webkit-scroll-snap-align: start;
+            scroll-snap-align: start;
 }
 
-.iconSample1, .iconSample2, .iconSample3, .iconSample4 {
+img[id^='row'] {
     margin: 0;
     padding: 0;
-    height: 10vh;
+    height: 17.7778vw;
+    display: inline-block;
 }
 
 .soundAdd {
-    margin: 0 -1vh;
+    margin: 0 -1.7778vw;
     width: 1.6875vh;
     vertical-align: top;
     position: relative;
-    top: 0.5vh; left: -1.5vh;
+    top: 0.8889vw; left: -2.6667vw;
+    z-index: 1;
 }
 
 .arrow {
@@ -443,7 +401,8 @@ body {
     margin: 0;
     vertical-align: top;
     position: relative;
-    top: 3vh; left: 0vh;
+    top: 3vh; left: -5vh;
+    opacity: 0.7;
 }
 
 li {
