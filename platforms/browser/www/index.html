@@ -1,0 +1,372 @@
+<!--Cordova
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="js/library/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/library/fastclick.js"></script>
+        <script src="js/library/hammer.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <title>Sleep Well</title>
+    </head>
+    <body>
+        <div class="appContainer">
+
+            <!-- phone staus bar w/battery, etc. -->
+            <div class="statusBar"></div>
+                
+            <!-- header w/nav & help icons-->
+            <div class="header">
+                <!-- navigation/search/favs menu icon -->
+                <img class="iconNav" src="img/iconNav.png">
+                <img class="iconSearch" src="img/iconSearch.png">
+                <img class="iconFav" src="img/iconFav.png">
+            </div>
+
+<!-- ___SCREEN: HOME_________________________________________________________ -->
+
+            <div id="homeScreen" class="page">
+                <img class="appLogo" src="img/appLogo.png">
+                <img class="appTitle" src="img/appTitle.png">
+                <h2>Currently:</h2>
+                <p id="time">
+                    <span class="currentTime"></span>
+                    <span class="currentTimeSuffix"></span>
+                </p>
+            </div>
+
+
+<!-- ___SCREEN: FAV SOUNDS___________________________________________________ -->
+
+            <div id="favSounds" class="page">
+                <div class="timeRing">
+                    <svg class="circleContainer">
+                        <circle cx="34.348vh" cy="50%" r="15.625vh" fill="none" stroke="#FAF8D0"; stroke-width="0.46875vh"  stroke-dasharray="98.17vh" stroke-dashoffset="98.17vh" stroke-linecap="round"></circle>
+                    </svg>
+                </div>
+                <h2>Currently:</h2>
+                <div id="time">
+                    <span class="currentTime"></span>
+                    <span class="currentTimeSuffix"></span>
+                </div>
+                <h4>Your favourite sounds</h4>
+                <div id="gridFavSounds" class="sounds">
+                    <div class="snd1">
+                    <img class="iconBird" src="img/iconBird.png" alt="Bird">
+                        <audio id="sndBird" src="sound/bird.mp3" loop></audio>
+                    </div>
+                    
+                    <div class="snd2">
+                    <img class="iconLeaf" src="img/iconLeaf.png" alt="Autumn Leaf">
+                        <audio id="sndLeaf" src="sound/leaf.mp3" loop></audio>
+                    </div>
+                    
+                    <div class="snd3">
+                    <img class="iconTrees" src="img/iconTrees.png" alt="Trees"><br/>
+                        <audio id="sndTrees" src="sound/trees.mp3" loop></audio>
+                    </div>
+                    
+                    <div class="snd4">
+                    <img class="iconRain" src="img/iconRain.png" alt="Rain">
+                        <audio id="sndRain" src="sound/rain.mp3" loop></audio>
+                    </div>
+                    
+                    <div class="snd5">
+                    <img class="iconOcean" src="img/iconOcean.png" alt="Ocean">
+                        <audio id="sndOcean" src="sound/ocean.mp3" loop></audio>
+                    </div>
+                    
+                    <div class="snd6">
+                    <img class="iconWind" src="img/iconWind.png" alt="Wind"><br/>
+                        <audio id="sndWind" src="sound/wind.mp3" loop></audio>
+                    </div>
+                    
+                    <div class="snd7">
+                    <img class="iconFire" src="img/iconFire.png" alt="Fire">
+                        <audio id="sndFire" src="sound/fire.mp3" loop></audio>
+                    </div>
+                    
+                    <div class="snd8">
+                    <img class="iconMelody" src="img/iconMelody.png" alt="Melody">
+                        <audio id="sndMelody" src="sound/melody.mp3" loop></audio>
+                    </div>
+                    
+                    <div class="snd9">
+                    <img class="iconEmpty" src="img/iconSampleDim.png" alt="Empty">
+                        <audio id="" src="" loop></audio>
+                    </div>
+                </div>
+                <img class="btnGoToSleep" src="img/btnGoToSleep.png" alt="Go to sleep">
+            </div>
+
+<!-- ___SCREEN: NAV SIDE MENU (OVERLAY)______________________________________ -->
+
+            <div id="navMenu">
+                <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+                <section class="navOverlay">
+                    <a href="#" class="linkPresent1" id="linkFav">Sound Board<img onclick="#" class="iconNavRev" src="img/iconNavRev.png"></a>
+                    <a href="#" class="linkPresent2" id="linkDTrend">Today's Trend</a>
+                    <a href="#" class="linkPresent2" id="linkMTrends">Monthly Trend</a>
+                    <a href="#" class="linkPast" id="may18">May</a>
+                    <a href="#" class="linkPast" id="apr18">April</a>
+                    <a href="#" class="linkPast" id="mar18">March</a>
+                    <a href="#" class="linkPast" id="feb18">February</a>
+                    <a href="#" class="linkPast" id="jan18">January</a>
+                    <a href="#" class="linkPast" id="dec17">December'17</a>
+                    <a href="#" class="linkPast" id="nov17">November'17</a>
+                    <a href="#" class="linkPast" id="oct17">October'17</a>
+                    <a href="#" class="linkPast" id="sep17">September'17</a>
+                    <a href="#" class="linkPast" id="aug17">August'17</a>
+                    <a href="#" class="linkPast" id="jul17">July'17</a>
+                    <a href="#" class="linkPast" id="jun17">June'17</a>
+                </section>
+            </div>
+
+<!-- ___SCREEN: SEARCH SOUNDS________________________________________________ -->
+
+            <div id="searchSounds" class="page">
+                <h1>Discover new<br/>sounds</h1>
+                <section class="gridSearchSounds">
+                    <section class="sampleSection1">
+                        <h4 class="gridHeader">Nature</h4>
+                        <div class="gridRow-1">
+                            <img id="row-1-Col-1" class="iconPiano" src="img/iconPiano.png" alt="Piano"/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="sndPiano" src="sound/piano.mp3" loop></audio>
+                            <img id="row-1-Col-2" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-1-Col-3" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-1-Col-4" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-1-Col-5" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-1-Col-6" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-1-Col-7" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-1-Col-8" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-1-Col-9" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-1-Col-10" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-1-Col-11" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-1-Col-12" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                        </div>
+                        <img class="arrow" src="img/iconMore.png" />
+                    </section>
+                    <section class="sampleSection2">
+                        <h4 class="gridHeader">Animal</h4>
+                        <div class="gridRow-2">
+                            <img id="row-2-Col-1" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-2-Col-2" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-2-Col-3" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-2-Col-4" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-2-Col-5" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-2-Col-6" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-2-Col-7" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-2-Col-8" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-2-Col-9" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-2-Col-10" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-2-Col-11" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-2-Col-12" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                        </div>
+                        <img class="arrow" src="img/iconMore.png" />
+                    </section>
+                    <section class="sampleSection3">
+                        <h4 class="gridHeader">Instrumental</h4>
+                        <div class="gridRow-3">
+                            <img id="row-3-Col-1" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-3-Col-2" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-3-Col-3" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-3-Col-4" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-3-Col-5" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-3-Col-6" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-3-Col-7" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-3-Col-8" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-3-Col-9" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-3-Col-10" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-3-Col-11" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-3-Col-12" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                        </div>
+                        <img class="arrow" src="img/iconMore.png" />
+                    </section>
+                    <section class="sampleSection4">
+                        <h4 class="gridHeader">Miscellaneous</h4>
+                        <div class="gridRow-4">
+                            <img id="row-4-Col-1" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-4-Col-2" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-4-Col-3" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-4-Col-4" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-4-Col-5" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-4-Col-6" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-4-Col-7" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-4-Col-8" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-4-Col-9" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-4-Col-10" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-4-Col-11" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                            <img id="row-4-Col-12" class="iconEmpty" src="img/iconSampleDim.png" alt=""/>
+                                <img class="soundAdd" src="img/iconAdd.png" alt="add to favs"/>
+                                <audio class="" src="" loop></audio>
+                        </div>
+                        <img class="arrow" src="img/iconMore.png" />
+                    </section>
+                </section>
+            </div>
+
+<!-- ___SCREEN: SLEEP TRENDS_________________________________________________ -->
+
+            <div id="sleepTrends" class="page">
+                <h1 class="title">Sleep Trend</h1>
+                <h2 class="subTitle">15th May 2018</h2>
+                <p class="subText">Hours of sleep: 10</p>
+                <section class="imgREM">
+                    <img class="btnREM" src="img/btnREM.png" alt="REM Cycles Button">
+                    <img class="graphTrend" src="img/graphTrends.png" alt="Sleep Trends Graph">
+                </section>
+            </div>
+            
+<!-- ___SCREEN: REM CYCLE____________________________________________________ -->
+
+            <div id="remCycle" class="page">
+                <h1 class="title">REM Cycles</h1>
+                <h2 class="subTitle">15th May 2018</h2>
+                <p class="subText">Cycles completed: 5</p>
+                <section class="imgTrend">
+                    <img class="btnTrend" src="img/btnTrend.png" alt="Sleep Trend Button">
+                    <img class="graphREM" src="img/graphREM.png" alt="REM Cycles Graph">
+                </section>
+            </div>
+
+<!-- ___SCREEN: MONTHLY TRENDS (MAY)_________________________________________ -->
+
+            <div id="mayTrends" class="page">
+                <h1 class="title">MAY</h1>
+                <h2 class="subTitle">Sleep Trends</h2>
+                <p class="subText">Average sleep time: 6hrs 52mins</p>
+                <section class="imgTrend">
+                    <img class="btnTrend" src="img/btnTrend.png" alt="Sleep Trend Button">
+                    <img class="graphMonthMay" src="img/graphMonthMay.png" alt="Monthly Trends for May">
+                </section>
+            </div>
+
+<!-- ________________________________________________________________________ -->
+
+        </div>
+<!-- ________________________________________________________________________ -->
+
+    <script src="js/library/vendor/philipwalton/polyfill.js"></script>
+    <script src="js/library/scrollsnap-polyfill.js"></script>
+    <script src="js/library/css-scroll-snap-points-polyfill.js"></script>
+
+    </body>
+
+
+</html>

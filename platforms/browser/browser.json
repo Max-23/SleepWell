@@ -1,0 +1,48 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-fonts": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-ios-longpress-fix": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "file": "plugins/cordova-plugin-fonts/www/fonts.js",
+      "id": "cordova-plugin-fonts.fonts",
+      "pluginId": "cordova-plugin-fonts",
+      "clobbers": [
+        "navigator.Fonts"
+      ]
+    },
+    {
+      "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+      "id": "cordova-plugin-x-toast.Toast",
+      "pluginId": "cordova-plugin-x-toast",
+      "clobbers": [
+        "window.plugins.toast"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-fonts": "0.6.5",
+    "cordova-plugin-whitelist": "1.3.3",
+    "cordova-plugin-x-toast": "2.6.2",
+    "cordova-plugin-ios-longpress-fix": "1.1.0"
+  }
+}

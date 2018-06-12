@@ -1,0 +1,81 @@
+{
+  "_from": "cordova-plugin-fonts",
+  "_id": "cordova-plugin-fonts@0.6.5",
+  "_inBundle": false,
+  "_integrity": "sha1-O+K5jaUhrd6LMo/TSRz2lVaY408=",
+  "_location": "/cordova-plugin-fonts",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-fonts",
+    "name": "cordova-plugin-fonts",
+    "escapedName": "cordova-plugin-fonts",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-fonts/-/cordova-plugin-fonts-0.6.5.tgz",
+  "_shasum": "3be2b98da521adde8b328fd3491cf6955698e34f",
+  "_spec": "cordova-plugin-fonts",
+  "_where": "C:\\{CordovaTesting}\\myApp",
+  "author": {
+    "name": "Erik Brommers"
+  },
+  "bugs": {
+    "url": "https://github.com/adapt-it/cordova-fonts/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-fonts",
+    "platforms": [
+      "firefoxos",
+      "android",
+      "ios",
+      "windows"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova Fonts plugin",
+  "devDependencies": {
+    "jshint": "^2.6.0"
+  },
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "engines": {
+    "cordovaDependencies": {
+      "2.0.0": {
+        "cordova": ">100"
+      }
+    }
+  },
+  "homepage": "https://github.com/adapt-it/cordova-fonts",
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-firefox",
+    "cordova-windows",
+    "plugin",
+    "fonts"
+  ],
+  "license": "Apache-2.0",
+  "main": "fonts.js",
+  "name": "cordova-plugin-fonts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adapt-it/cordova-fonts.git"
+  },
+  "scripts": {
+    "jshint": "node node_modules/jshint/bin/jshint www && node node_modules/jshint/bin/jshint src && node node_modules/jshint/bin/jshint tests",
+    "test": "npm run jshint"
+  },
+  "version": "0.6.5"
+}

@@ -1,0 +1,17 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "SleepWell",
+  "short_name": "SleepWell",
+  "version": "io.cordova.hellocordova",
+  "description": "An app design to help you rest easier, wake happier, and sleep well.",
+  "author": "Maxwell Lyons",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
+  "start_url": "index.html"
+}
